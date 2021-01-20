@@ -4,13 +4,6 @@ package eu.senla.task2.rainbow;
 import java.util.Scanner;
 
 public class Rainbow {
-    //    public static final String RED = "красный";
-//    public static final String ORANGE = "оранжевый";
-//    public static final String YELLOW = "желтый";
-//    public static final String GREEN = "зеленый";
-//    public static final String BLEU = "голубой";
-//    public static final String BLUE = "синий";
-//    public static final String PURPLE = "фиолетовый";
     public final String[] COLORS = {"красный", "оранжевый", "желтый", "зеленый", "голубой", "синий", "фиолетовый"};
 
     public Rainbow() {
@@ -32,7 +25,6 @@ public class Rainbow {
         } else {
             System.out.println("Ты уверен что все правильно понял?");
         }
-
 
     }
 
