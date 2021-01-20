@@ -23,7 +23,7 @@ public class Rainbow {
             int color2 = scanner.nextInt();
             getColor(color1, color2);
         } else {
-            System.out.println("Ты уверен что все правильно понял?");
+            System.out.println("Ты уверен, что все правильно понял?");
         }
 
     }
