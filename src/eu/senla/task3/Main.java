@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Random random = new Random();
         String[] names = {"Puffy", "Flaffy", "Roxxy", "Loki", "Luna", "Rikki", "Dolly", "Taffy", "Barsik", "Tutti"};
+        System.out.println(names.length);
 
 
         System.out.println("-------------- First loop --------------");
@@ -19,7 +20,7 @@ public class Main {
 
         for (int i = 0; i < 10; i++) {
             Cat cat = new Cat();
-            cat.setName(names[random.nextInt(10)]);
+            cat.setName(names[random.nextInt(names.length)]);
             cat.setAge(random.nextInt(10));
             System.out.println(i + 1 + ") The cat named " + cat.getName() + " is " + cat.getAge() + " years old.");
         }
@@ -29,7 +30,7 @@ public class Main {
         Cat[] array = new Cat[10];
         int i = 1;
         do {
-            Cat cat = new Cat(names[random.nextInt(10)], random.nextInt(10));
+            Cat cat = new Cat(names[random.nextInt(names.length)], random.nextInt(10));
             array[i - 1] = cat;
             System.out.println(i + ") " + cat);
             i++;
@@ -53,9 +54,5 @@ public class Main {
         Cat cat3 = new Cat("Puffy", 2);
         System.out.println("Сравниваю котов {" + cat1 + "} и {" + cat2 + "} получаю " + cat1.equals(cat2)); // false
         System.out.println("Сравниваю котов {" + cat1 + "} и {" + cat3 + "} получаю " + cat1.equals(cat3));  // true
-
-
     }
-
-
 }
