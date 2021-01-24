@@ -40,15 +40,15 @@ public class Rainbow {
                 System.out.println("Вы выбрали " + COLORS[firstColor] + " цвет.");
                 break;
             default:
-                System.out.println("Такого цвета нету, введите значения от 0 до 6 включительно");
+                System.out.println("Такого цвета нету, введите значения от 0 до 6 включительно.");
         }
     }
 
     public void getColor(int firstColor, int secondColor) {
         if (firstColor >= 0 && firstColor < 6 && secondColor >= 0 && secondColor < 6) {
-            System.out.println("Вы выбрали " + modifyColorString(COLORS[firstColor]) + "-" + COLORS[secondColor] + " цвет");
+            System.out.println("Вы выбрали " + modifyColorString(COLORS[firstColor]) + "-" + COLORS[secondColor] + " цвет.");
         } else {
-            System.out.println("Оба числа должны быть ото 0 до 6");
+            System.out.println("Оба числа должны быть ото 0 до 6.");
         }
     }
 
