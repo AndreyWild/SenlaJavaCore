@@ -46,11 +46,11 @@ public class Main {
             System.out.println(cat);
         }
 
+        System.out.println("-------------- .equals() --------------");
+
         Cat cat1 = new Cat("Puffy", 2);
         Cat cat2 = new Cat("Puffy", 3);
         Cat cat3 = new Cat("Puffy", 2);
-
-        System.out.println("-------------- .equals() --------------");
         System.out.println("Сравниваю котов {" + cat1 + "} и {" + cat2 + "} получаю " + cat1.equals(cat2)); // false
         System.out.println("Сравниваю котов {" + cat1 + "} и {" + cat3 + "} получаю " + cat1.equals(cat3));  // true
 
