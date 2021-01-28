@@ -1,7 +1,5 @@
 package eu.senla.task4;
 
-import eu.senla.task3.Main;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
