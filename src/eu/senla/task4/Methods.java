@@ -189,9 +189,5 @@ public class Methods {
         // Преобразуем элементы в строку и выводим
         System.out.println("-------------------------------- Преобр. элементы в строки и числа --------------");
         showSbArray(joinArray(getDiagonal(matrix), getSideDiagonal(matrix)));
-
-
     }
-
-
 }
