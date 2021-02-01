@@ -7,7 +7,8 @@ public class Methods {
 
     // Метод возвращает случайное число из 6 знаков (типа 0,0000) в виде строки
     public static String getStringOfDouble() {
-        String number = (String.valueOf((Math.random() * 10))).substring(0, 6);
+//        String number = (String.valueOf((Math.random() * 10))).substring(0, 6) // через substring();
+        String number = String.format("%.4f", Math.random() * 10); // через format();
         return number;
     }
 
