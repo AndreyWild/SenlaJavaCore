@@ -10,6 +10,8 @@ public abstract class Container {
 
     // объем цилинда = DIAMETER /2 * 3.14
 
+    double c = (Math.PI * (Math.pow((DIAMETER_BIG_SMALL/2), 2))*containerHeight) * DENSITY_WATER_1000;
+
 
 
 }
