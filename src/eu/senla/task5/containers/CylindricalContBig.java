@@ -1,13 +1,14 @@
 package eu.senla.task5.containers;
 
 public class CylindricalContBig extends Container {
-    double weight = (Math.PI * (Math.pow((DIAMETER_BIG_SMALL / 2), 2)) *
-            containerHeight) * DENSITY_WATER_2000;
+    double volume = Math.PI * (Math.pow((DIAMETER_BIG / 2), 2)) * containerHeight;
+    double weight = volume * randomDensWater;
+    double weightFormat = Math.ceil(weight * Math.pow(10, 3)) / Math.pow(10, 3);
 
     @Override
     public String toString() {
         return "CylindricalContBig{" +
-                "Weight=" + weight +
+                "weightFormat=" + weightFormat +
                 '}';
     }
 }
@@ -16,8 +17,8 @@ class Test {
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
 
-            CylindricalContBig CB1 = new CylindricalContBig();
-            System.out.println(CB1);
         }
+        CylindricalContBig CB1 = new CylindricalContBig();
+        System.out.println(CB1);
     }
 }
