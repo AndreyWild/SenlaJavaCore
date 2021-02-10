@@ -1,4 +1,4 @@
-package eu.senla.task5.containers;
+package eu.senla.task5.ver0_1.containers;
 
 public class SquareContBig extends Container {
     double volume = containerHeight * (Math.pow(DIAGONAL_BIG * 2, 2)) * 0.5;

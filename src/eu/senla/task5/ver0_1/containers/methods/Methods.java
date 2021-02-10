@@ -1,6 +1,4 @@
-package eu.senla.task5.methods;
-
-import eu.senla.task5.containers.*;
+package eu.senla.task5.ver0_1.containers.methods;
 
 public class Methods {
 

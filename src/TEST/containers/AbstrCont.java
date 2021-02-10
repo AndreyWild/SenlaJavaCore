@@ -10,7 +10,7 @@ public abstract class AbstrCont {
     protected int randomDensity = DENSITY_WATER[(int)((Math.random() * DENSITY_WATER.length))];
     protected int hight = (int)((Math.random() * 92) +10);
 
-    protected double scale = Math.pow(10, 4);
+    protected double scale = Math.pow(10, 3);
 
 
 

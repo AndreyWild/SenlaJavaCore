@@ -1,6 +1,4 @@
-package eu.senla.task5.containers;
-
-import java.util.Random;
+package eu.senla.task5.ver0_1.containers;
 
 public abstract class Container {
     //Random random = new Random();

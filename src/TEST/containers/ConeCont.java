@@ -1,14 +1,11 @@
 package TEST.containers;
 
 
-
-
 public class ConeCont extends AbstrCont {
-    // объем конуса h/3 * Pi * r^2
-    double volume = (hight /3) * Math.PI * Math.pow((randomSize / 2), 2);
-    // округление до 4 знаков после запятой
-    double weight = Math.ceil((randomDensity / volume) * scale) / scale;
-
+    // Находим объем контейнера
+    double volume = (hight / 3) * Math.PI * Math.pow((randomSize / 2), 2);
+    // Находим массу + округление до 4 знаков после запятой - переводим кг в Т
+    double weight = Math.ceil(((randomDensity * volume) * 0.001) * scale) / scale;
 
 
     @Override
@@ -19,8 +16,8 @@ public class ConeCont extends AbstrCont {
     @Override
     public String toString() {
         return ((randomSize == 10) ? "Маленький " : "Большой ") +
-                "конус " + super.toString() + " Вес=" + weight + '}';
-        }
+                "конус " + super.toString() + " Объем=" + String.format("%.3f",volume) + " Вес=" + weight + "(T)\n}";
+    }
 }
 
 

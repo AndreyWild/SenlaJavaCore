@@ -1,4 +1,4 @@
-package eu.senla.task5.containers;
+package eu.senla.task5.ver0_1.containers;
 
 public class ConeCont extends AbstractContainer {
     double weight = (containerHeight / 3)* Math.PI * (Math.pow((randomSize / 2), 2)) * randomDensWater;

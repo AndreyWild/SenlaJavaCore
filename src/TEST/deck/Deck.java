@@ -3,65 +3,59 @@ package TEST.deck;
 import TEST.containers.AbstrCont;
 import TEST.methods.Methods;
 
+import java.util.Arrays;
+
 public class Deck {
 
-    public AbstrCont [] getRandDeck(){
-        AbstrCont[] deck;
+    // массив контейнеров
+    public AbstrCont[] deck;
+
+    public Deck() {
+        deck = getRandDeck();
+    }
+
+    // Заполняет палубу контейнерами
+    public void add() {
+        deck = getRandDeck();
+    }
+
+
+    // Метод возвращает рандомно заполненный список на [2] или [4] контейнерами
+    public AbstrCont[] getRandDeck() {
+        AbstrCont[] abstrContainer;
         AbstrCont container = Methods.getRandCont();
-        System.out.println(container);
-        deck = new AbstrCont[(container.getSize())? 4 : 2];
-        System.out.println(deck.length);
+        //System.out.println(container);
+        abstrContainer = new AbstrCont[(container.getSize()) ? 4 : 2];
+        //System.out.println(deck.length);
         int count = 1;
 
-            while (deck[deck.length-1] == null){
-                AbstrCont contE = Methods.getRandCont();
-                if(contE.getSize() == container.getSize()){
-                    deck[0] = container;
-                    deck [count] = contE;
-                    count++;
-                } else continue;
-            } return deck;
-
-
-
-
-
-
-
-
-
-//        if (container.getSize()){
-//
-//            while (deck[deck.length-1] == null){
-//                AbstrCont contE = Methods.getRandCont();
-//                if(contE.getSize()){
-//                    deck [count] = contE;
-//                    count++;
-//                } else continue;
-//            } return deck;
-//        } else {
-//
-//            while (deck[deck.length-1] == null){
-//                AbstrCont contE = Methods.getRandCont();
-//                if(!contE.getSize()){
-//                    deck [count] = contE;
-//                    count++;
-//                } else continue;
-//            } return deck;
-//        }
-
-
-
-
+        while (abstrContainer[abstrContainer.length - 1] == null) {
+            AbstrCont contE = Methods.getRandCont();
+            if (contE.getSize() == container.getSize()) {
+                abstrContainer[0] = container;
+                abstrContainer[count] = contE;
+                count++;
+            }
+        }
+        return abstrContainer;
     }
+
+    @Override
+    public String toString() {
+        return "Палуба {" + Arrays.toString(deck) + '}';
+    }
+
+
 }
 
-class Test{
+
+class Test {
     public static void main(String[] args) {
         Deck deck = new Deck();
         AbstrCont[] Deck = deck.getRandDeck();
-        for (AbstrCont s : Deck){
-            System.out.println(s);
+        for (AbstrCont c : Deck) {
+
+            System.out.println(c);
         }
 
 
