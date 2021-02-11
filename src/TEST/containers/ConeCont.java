@@ -16,7 +16,7 @@ public class ConeCont extends AbstrCont {
     @Override
     public String toString() {
         return ((randomSize == 10) ? "Маленький " : "Большой ") +
-                "конус " + super.toString() + " Объем=" + String.format("%.3f",volume) + " Вес=" + weight + "(T)\n}";
+                "конус " + super.toString() + " Объем=" + String.format("%.3f",volume) + " Вес=" + weight + "(T)";
     }
 }
 

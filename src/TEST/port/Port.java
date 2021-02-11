@@ -17,18 +17,35 @@ public class Port implements Addable {
             System.out.println("В порту нету места");
         }
     }
-    public void remove(){
-        docks.remove(0);
+
+    // Удалить конкретный корабль из порта
+    public void removeShipNum(int ShipNum){
+        docks.remove(ShipNum -1);
         System.out.println("Один корабль покинул порт");
     }
 
+    // Очистить порт
+    public void removeAll(){
+        docks.clear();
+        System.out.println("Порт покинули все корабли");
+    }
+
     @Override
+    // Заполнить порт 10-ю кораблями
     public void add() {
-        Ship ship = new Ship();
-        if ((docks.size() <= 10)) {
-            docks.add(ship);
-        } else {
-            System.out.println("В порту нету места");
+        for (int i = 0; i < 10; i++) {
+            Ship ship = new Ship();
+            ship.add();
+            if ((docks.size() <= 10)) {
+                docks.add(ship);
+            } else {
+                System.out.println("В порту нету места");
+            }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Порт тортуга \n" + "docks=" + docks ;
     }
 }

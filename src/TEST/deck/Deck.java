@@ -40,10 +40,25 @@ public class Deck {
         return abstrContainer;
     }
 
-    @Override
-    public String toString() {
-        return "Палуба {" + Arrays.toString(deck) + '}';
+    public double allWeight(){
+        double allWeight =0;
+        for(AbstrCont cont : deck){
+            allWeight += cont.getWeight();
+        } return  allWeight;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Палуба \n" + Arrays.toString(deck);
+//    }
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+            for (int i = 0; i < deck.length; i++) {
+                result.append(i + 1).append(".) ");
+                result.append(deck[i].toString()).append(" ");
+            } return "Палуба \n" + result;
+        }
 
 
 }
@@ -52,11 +67,12 @@ public class Deck {
 class Test {
     public static void main(String[] args) {
         Deck deck = new Deck();
-        AbstrCont[] Deck = deck.getRandDeck();
-        for (AbstrCont c : Deck) {
-
-            System.out.println(c);
-        }
+//        AbstrCont[] Deck = deck.getRandDeck();
+//        for (AbstrCont c : Deck) {
+//
+//            System.out.println(c);
+//        }
+        System.out.println(deck);
 
 
     }

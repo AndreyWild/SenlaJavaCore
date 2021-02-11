@@ -15,6 +15,6 @@ public class SquareCont extends AbstrCont {
     @Override
     public String toString() {
         return ((randomSize == 10) ? "Маленький " : "Большой ") +
-                "квадрат " + super.toString() + " Объем=" + String.format("%.3f",volume) + " Вес=" + weight + "(T)\n}";
+                "квадрат " + super.toString() + " Объем=" + String.format("%.3f",volume) + " Вес=" + weight + "(T)";
     }
 }
