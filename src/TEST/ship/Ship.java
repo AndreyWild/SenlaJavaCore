@@ -36,33 +36,18 @@ public class Ship implements Addable {
         } return allweight;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Корабль{" + Arrays.toString(shipDecks) + '}' + shipDecks.length;
-//    }
-
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
             for (int i = 0; i < shipDecks.length; i++) {
                 result.append("Палуба №").append(i + 1).append(": [").append(shipDecks[i].toString()).append("]\n");
             }
-            result.append("Масса воды: ").append(String.format("%.2f", allWeight()));
+            result.append("Масса воды: ").append(String.format("%.2f", allWeight())).append(" тонн.");
 
         return names[(int)((Math.random() * names.length))]+"\n" + result;
     }
 
-
 }
 
-class Te{
-
-    public static void main(String[] args) {
-        Ship ship = new Ship();
-        ship.add();
-        System.out.println(ship);
-    }
-
-}
 
 

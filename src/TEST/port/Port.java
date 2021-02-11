@@ -58,7 +58,7 @@ public class Port implements Addable {
         for (int i = 0; i < docks.size(); i++) {
             result.append("Корабль №").append(i + 1).append(": ").append(docks.get(i).toString()).append("\n");
         }
-        result.append("\nМасса воды в порту: ").append(String.format("%.2f", allWeight())).append("тонн");
+        result.append("\nМасса воды в порту: ").append(String.format("%.2f", allWeight())).append(" тонн.");
 
         return "ꘅ-~-~-~-~-~-~-✫ ✬ ✭ ✟ ☠ Порт тортуга ☠ ✟ ✭ ✫-~-~-~-~-~-~-ꘅ\n" + result;
     }
