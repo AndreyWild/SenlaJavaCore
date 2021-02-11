@@ -11,6 +11,7 @@ public class Port implements Addable {
 
     // Добавить в порт корабль
     public void add(Ship ship){
+        ship.add();
         if ((docks.size() < 10)) {
             docks.add(ship);
         } else {
