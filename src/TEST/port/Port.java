@@ -48,4 +48,15 @@ public class Port implements Addable {
     public String toString() {
         return "Порт тортуга \n" + "docks=" + docks ;
     }
+
+//    @Override
+//    public String toString() {
+//        StringBuilder result = new StringBuilder();
+//        for (int i = 0; i < shipDecks.length; i++) {
+//            result.append("Палуба №").append(i + 1).append(": [").append(shipDecks[i].toString()).append("]\n");
+//        }
+//        result.append("Масса воды: ").append(String.format("%.2f", allweight()));
+//
+//        return names[(int)((Math.random() * names.length))]+"\n" + result;
+//    }
 }

@@ -50,9 +50,6 @@ public class Ship implements Addable {
             result.append("Масса воды: ").append(String.format("%.2f", allweight()));
 
         return names[(int)((Math.random() * names.length))]+"\n" + result;
-
-
-
     }
 
 
