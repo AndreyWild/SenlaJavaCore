@@ -45,7 +45,7 @@ public class Ship implements Addable {
     public String toString() {
         StringBuilder result = new StringBuilder();
             for (int i = 0; i < shipDecks.length; i++) {
-                result.append("№").append(i + 1).append(": [").append(shipDecks[i].toString()).append("] ");
+                result.append("Палуба №").append(i + 1).append(": [").append(shipDecks[i].toString()).append("]\n");
             }
             result.append("Масса воды: ").append(String.format("%.2f", allweight()));
 

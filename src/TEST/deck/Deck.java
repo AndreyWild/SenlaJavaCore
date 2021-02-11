@@ -57,7 +57,7 @@ public class Deck {
             for (int i = 0; i < deck.length; i++) {
                 result.append(i + 1).append(".) ");
                 result.append(deck[i].toString()).append(" ");
-            } return "Палуба \n" + result;
+            } return  result.toString();
         }
 
 
