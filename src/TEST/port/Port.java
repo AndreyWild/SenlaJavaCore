@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class Port implements Addable {
 
-    private ArrayList <Ship> docks = new ArrayList();
+    public ArrayList <Ship> docks = new ArrayList();
 
     // Добавить в порт корабль
     public void add(Ship ship){
-        if ((docks.size() <= 10)) {
+        if ((docks.size() < 10)) {
             docks.add(ship);
         } else {
             System.out.println("В порту нету места");

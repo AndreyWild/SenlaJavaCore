@@ -44,7 +44,7 @@ public class Ship implements Addable {
             }
             result.append("Масса воды: ").append(String.format("%.2f", allWeight())).append(" тонн.");
 
-        return names[(int)((Math.random() * names.length))]+"\n" + result;
+        return names[(int)((Math.random() * names.length))]+"\n" + result.toString();
     }
 
 }
