@@ -27,9 +27,9 @@ public class Ship implements Addable {
         if (shipDecks.length == 2){
             shipDecks[1] = new Deck();}
     }
-    public void showInfo(){}
 
-    public double allweight(){
+
+    public double allWeight(){
         double allweight = 0;
         for (Deck deck :shipDecks){
             allweight+= deck.allWeight();
@@ -47,7 +47,7 @@ public class Ship implements Addable {
             for (int i = 0; i < shipDecks.length; i++) {
                 result.append("Палуба №").append(i + 1).append(": [").append(shipDecks[i].toString()).append("]\n");
             }
-            result.append("Масса воды: ").append(String.format("%.2f", allweight()));
+            result.append("Масса воды: ").append(String.format("%.2f", allWeight()));
 
         return names[(int)((Math.random() * names.length))]+"\n" + result;
     }

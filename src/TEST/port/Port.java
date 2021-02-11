@@ -44,19 +44,24 @@ public class Port implements Addable {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Порт тортуга \n" + "docks=" + docks ;
+    public double allWeight(){
+        double allweight = 0;
+        for (Ship ship :docks){
+            allweight+= ship.allWeight();
+        } return allweight;
     }
 
-//    @Override
-//    public String toString() {
-//        StringBuilder result = new StringBuilder();
-//        for (int i = 0; i < shipDecks.length; i++) {
-//            result.append("Палуба №").append(i + 1).append(": [").append(shipDecks[i].toString()).append("]\n");
-//        }
-//        result.append("Масса воды: ").append(String.format("%.2f", allweight()));
-//
-//        return names[(int)((Math.random() * names.length))]+"\n" + result;
-//    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < docks.size(); i++) {
+            result.append("Корабль №").append(i + 1).append(": ").append(docks.get(i).toString()).append("\n");
+        }
+        result.append("\nМасса воды в порту: ").append(String.format("%.2f", allWeight())).append("тонн");
+
+        return "ꘅ-~-~-~-~-~-~-✫ ✬ ✭ ✟ ☠ Порт тортуга ☠ ✟ ✭ ✫-~-~-~-~-~-~-ꘅ\n" + result;
+    }
 }
+
+
