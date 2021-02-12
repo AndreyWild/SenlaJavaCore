@@ -2,7 +2,7 @@ package eu.senla.task5.final_ver.containers;
 
 public class ConeCont extends AbstrCont {
     // Находим объем конус контейнера
-    double volume = (hight / 3) * Math.PI * Math.pow((randomSize / 2), 2);
+    private double volume = (hight / 3) * Math.PI * Math.pow((randomSize / 2), 2);
 
     @Override
     public double getWeight() {

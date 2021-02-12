@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Port implements Addable {
 
-    public ArrayList<Ship> docks = new ArrayList();
+    private ArrayList<Ship> docks = new ArrayList();
 
     // Добавить в порт корабль
     public void add(Ship ship) {

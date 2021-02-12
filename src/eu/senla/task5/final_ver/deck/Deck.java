@@ -7,7 +7,7 @@ import eu.senla.task5.final_ver.methods.Methods;
 public class Deck implements Addable {
 
     // массив контейнеров
-    public AbstrCont[] deck;
+    private AbstrCont[] deck;
 
     public Deck() {
         deck = getRandDeck();
