@@ -1,7 +1,7 @@
-package TEST.containers;
+package eu.senla.task5.final_ver.containers;
 
 public class CylindrCont extends AbstrCont {
-    // Находим объем контейнера
+    // Находим объем цилиндр контейнера
     double volume = Math.PI * Math.pow((randomSize / 2), 2) * hight;
 
     @Override

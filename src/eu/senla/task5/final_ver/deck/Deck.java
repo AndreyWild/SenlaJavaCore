@@ -1,10 +1,8 @@
-package TEST.deck;
+package eu.senla.task5.final_ver.deck;
 
-import TEST.containers.AbstrCont;
-import TEST.methods.Addable;
-import TEST.methods.Methods;
-
-import java.util.Arrays;
+import eu.senla.task5.final_ver.containers.AbstrCont;
+import eu.senla.task5.final_ver.methods.Addable;
+import eu.senla.task5.final_ver.methods.Methods;
 
 public class Deck implements Addable {
 
@@ -49,8 +47,7 @@ public class Deck implements Addable {
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < deck.length; i++) {
-            result.append(i + 1).append(".) ");
-            result.append(deck[i].toString()).append(" ");
+            result.append(i + 1).append(".) ").append(deck[i].toString()).append(" ");
         }
         return result.toString();
     }

@@ -1,16 +1,16 @@
-package TEST.port;
+package eu.senla.task5.final_ver.port;
 
-import TEST.methods.Addable;
-import TEST.ship.Ship;
+import eu.senla.task5.final_ver.methods.Addable;
+import eu.senla.task5.final_ver.ship.Ship;
 
 import java.util.ArrayList;
 
 public class Port implements Addable {
 
-    public ArrayList <Ship> docks = new ArrayList();
+    public ArrayList<Ship> docks = new ArrayList();
 
     // Добавить в порт корабль
-    public void add(Ship ship){
+    public void add(Ship ship) {
         ship.add();
         if ((docks.size() < 10)) {
             docks.add(ship);
@@ -20,13 +20,13 @@ public class Port implements Addable {
     }
 
     // Удалить конкретный корабль из порта
-    public void removeShipNum(int ShipNum){
-        docks.remove(ShipNum -1);
+    public void removeShipNum(int ShipNum) {
+        docks.remove(ShipNum - 1);
         System.out.println("Один корабль покинул порт");
     }
 
     // Очистить порт
-    public void removeAll(){
+    public void removeAll() {
         docks.clear();
         System.out.println("Порт покинули все корабли");
     }
@@ -45,13 +45,14 @@ public class Port implements Addable {
         }
     }
 
-    public double allWeight(){
+    // Метод рассчитывает общую массу груза в порту.
+    public double allWeight() {
         double allweight = 0;
-        for (Ship ship :docks){
-            allweight+= ship.allWeight();
-        } return allweight;
+        for (Ship ship : docks) {
+            allweight += ship.allWeight();
+        }
+        return allweight;
     }
-
 
     @Override
     public String toString() {
@@ -60,7 +61,6 @@ public class Port implements Addable {
             result.append("Корабль №").append(i + 1).append(": ").append(docks.get(i).toString()).append("\n");
         }
         result.append("\nМасса воды в порту: ").append(String.format("%.2f", allWeight())).append(" тонн.");
-
         return "ꘅ-~-~-~-~-~-~-✫ ✬ ✭ ✟ ☠ Порт тортуга ☠ ✟ ✭ ✫-~-~-~-~-~-~-ꘅ\n" + result;
     }
 }

@@ -1,11 +1,7 @@
-package TEST.main;
+package eu.senla.task5.final_ver.main;
 
-import TEST.containers.ConeCont;
-import TEST.containers.CylindrCont;
-import TEST.containers.SquareCont;
-import TEST.deck.Deck;
-import TEST.port.Port;
-import TEST.ship.Ship;
+import eu.senla.task5.final_ver.port.Port;
+import eu.senla.task5.final_ver.ship.Ship;
 
 
 
