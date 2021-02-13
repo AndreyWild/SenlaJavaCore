@@ -29,11 +29,15 @@ public class Ship implements Addable {
     }
 
 
-    public double allWeight(){
-        double allweight = 0;
-        for (Deck deck :shipDecks){
-            allweight+= deck.allWeight();
-        } return allweight;
+//    public double allWeight(){
+//        double allweight = 0;
+//        for (Deck deck :shipDecks){
+//            allweight+= deck.allWeight();
+//        } return allweight;
+//    }
+
+    public double allWeight() {
+        return Arrays.stream(shipDecks).mapToDouble(f -> f.allWeight()).sum();
     }
 
     @Override

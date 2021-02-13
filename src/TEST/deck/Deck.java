@@ -38,12 +38,16 @@ public class Deck implements Addable {
         return abstrContainer;
     }
 
+//    public double allWeight2() {
+//        double allWeight = 0;
+//        for (AbstrCont cont : deck) {
+//            allWeight += cont.getWeight();
+//        }
+//        return allWeight;
+//    }
+
     public double allWeight() {
-        double allWeight = 0;
-        for (AbstrCont cont : deck) {
-            allWeight += cont.getWeight();
-        }
-        return allWeight;
+        return Arrays.stream(deck).mapToDouble(f -> f.getWeight()).sum();
     }
 
     public String toString() {
