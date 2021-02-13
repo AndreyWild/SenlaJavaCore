@@ -1,9 +1,8 @@
-package TEST.containers;
-
+package eu.senla.task5.final_ver.containers;
 
 public class ConeCont extends AbstrCont {
-    // Находим объем контейнера
-    double volume = (hight / 3) * Math.PI * Math.pow((randomSize / 2), 2);
+    // Находим объем конус контейнера
+    private double volume = (hight / 3) * Math.PI * Math.pow((randomSize / 2), 2);
 
     @Override
     public double getWeight() {

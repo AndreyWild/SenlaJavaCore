@@ -4,7 +4,6 @@ import TEST.methods.Addable;
 import TEST.ship.Ship;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Port implements Addable {
 
@@ -46,15 +45,11 @@ public class Port implements Addable {
         }
     }
 
-//    public double allWeight2(){
-//        double allweight = 0;
-//        for (Ship ship :docks){
-//            allweight+= ship.allWeight();
-//        } return allweight;
-//    }
-
-    public double allWeight() {
-        return docks.stream().mapToDouble(f -> f.allWeight()).sum();
+    public double allWeight(){
+        double allweight = 0;
+        for (Ship ship :docks){
+            allweight+= ship.allWeight();
+        } return allweight;
     }
 
 
