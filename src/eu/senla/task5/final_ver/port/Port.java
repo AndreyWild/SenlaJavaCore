@@ -1,9 +1,12 @@
-package TEST.port;
+package eu.senla.task5.final_ver.port;
 
-import TEST.methods.Addable;
-import TEST.ship.Ship;
+
+
+import eu.senla.task5.final_ver.methods.Addable;
+import eu.senla.task5.final_ver.ship.Ship;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Port implements Addable {
 
@@ -45,11 +48,15 @@ public class Port implements Addable {
         }
     }
 
-    public double allWeight(){
-        double allweight = 0;
-        for (Ship ship :docks){
-            allweight+= ship.allWeight();
-        } return allweight;
+//    public double allWeight(){
+//        double allweight = 0;
+//        for (Ship ship :docks){
+//            allweight+= ship.allWeight();
+//        } return allweight;
+//    }
+
+    public double allWeight() {
+        return docks.stream().mapToDouble(f -> f.allWeight()).sum();
     }
 
 

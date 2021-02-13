@@ -3,6 +3,8 @@ package eu.senla.task5.final_ver.ship;
 import eu.senla.task5.final_ver.deck.Deck;
 import eu.senla.task5.final_ver.methods.Addable;
 
+import java.util.Arrays;
+
 public class Ship implements Addable {
 
     // Названия кораблей
@@ -29,13 +31,17 @@ public class Ship implements Addable {
         }
     }
 
-    // Расчет общей масси груза корабля
+//    // Расчет общей масси груза корабля
+//    public double allWeight() {
+//        double allweight = 0;
+//        for (Deck deck : shipDecks) {
+//            allweight += deck.allWeight();
+//        }
+//        return allweight;
+//    }
+
     public double allWeight() {
-        double allweight = 0;
-        for (Deck deck : shipDecks) {
-            allweight += deck.allWeight();
-        }
-        return allweight;
+        return Arrays.stream(shipDecks).mapToDouble(f -> f.allWeight()).sum();
     }
 
     @Override
