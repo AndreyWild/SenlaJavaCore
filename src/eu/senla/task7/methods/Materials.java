@@ -11,7 +11,10 @@ public enum Materials {
         this.mater = mater;
     }
 
-    public  String getmater(){
+    Materials() {
+    }
+
+    public  String getMater(){
         return mater;
     }
 }

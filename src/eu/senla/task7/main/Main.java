@@ -1,19 +1,20 @@
 package eu.senla.task7.main;
 
-
+import eu.senla.task7.methods.Materials;
 import eu.senla.task7.plantOfBody.Body;
 import eu.senla.task7.plantOfHead.Head;
 import eu.senla.task7.robot.Robot;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("-------------------------Авторежим-------------------------");
         for (int i = 1; i < 10; i++) {
             Robot rob = new Robot();
             System.out.println("№" + i + ") " + rob);
         }
 
-        Head head = new Head();
-        head.plasticMat();
+        System.out.println("-------------------------Ручной режим-------------------------");
+        Head head = new Head(Materials.METAL);
         System.out.println(head + "\n");
 
         Body body = new Body();
