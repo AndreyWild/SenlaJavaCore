@@ -14,9 +14,11 @@ public class Main {
         }
 
         System.out.println("-------------------------Ручной режим-------------------------");
+        // Через параметр
         Head head = new Head(Materials.METAL);
         System.out.println(head + "\n");
 
+        // Через метод
         Body body = new Body();
         body.metalMat();
         System.out.println(body + "\n");
@@ -28,7 +30,6 @@ public class Main {
 
         Robot robot2 = new Robot("Би-БИ", head, body);
         System.out.println(robot2 + "\n");
-
 
     }
 }

@@ -3,11 +3,11 @@ package eu.senla.task7.methods;
 public abstract class AbstractPartBody {
     protected Materials material;
 
-//    // Конструктор без параметра сразу создает объект со случайным значением элемента material
-//    public AbstractPartBody() { material = Methods.getRandomMat(); }
-//
-//    // Конструктор получает значение из Enum и присваивает его переменной material
-//    public AbstractPartBody(Materials material) { this.material = material; }
+    // Конструктор без параметра
+    public AbstractPartBody() {}
+
+    // Конструктор получает значение из Enum и присваивает его переменной material
+    public AbstractPartBody(Materials material) { this.material = material; }
 
     // Присваивает переменной material случайное значение из Enum
     public void randomMat(){
@@ -32,6 +32,6 @@ public abstract class AbstractPartBody {
 
     @Override
     public String toString() {
-        return material.toString();
+        return material.getMater();
     }
 }

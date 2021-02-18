@@ -4,9 +4,9 @@ import eu.senla.task7.methods.*;
 
 public class Body extends AbstractPartBody{
 
-    public Body() { super.material = Methods.getRandomMat(); }
+    public Body() { material = Methods.getRandomMat(); }
 
-    public Body(Materials material) { super.material = material; }
+    public Body(Materials material) { super(material); }
 
     @Override
     public String toString() {

@@ -1,6 +1,5 @@
 package eu.senla.task7.robot;
 import eu.senla.task7.methods.*;
-
 import eu.senla.task7.plantOfBody.Body;
 import eu.senla.task7.plantOfHead.Head;
 
@@ -25,16 +24,16 @@ public class Robot implements Addable {
     }
 
     @Override
-    public String toString() {
-        return "Robot #"+ count +" \"" + name + "\" " + body+ " " + head;
-    }
-
-    @Override
     public void add(Object t) {
         if (t instanceof Head){
             head = (Head)t;
         } if (t instanceof Body){
             body = (Body)t;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Robot #"+ count +" \"" + name + "\" " + body+ " " + head;
     }
 }

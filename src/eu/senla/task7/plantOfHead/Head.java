@@ -6,7 +6,7 @@ public class Head extends AbstractPartBody {
 
     public Head() { super.material = Methods.getRandomMat(); }
 
-    public Head(Materials material) { super.material = material; }
+    public Head(Materials material) { super(material);}
 
     @Override
     public String toString() {
@@ -14,11 +14,6 @@ public class Head extends AbstractPartBody {
     }
 }
 
-class Test{
-    public static void main(String[] args) {
-        Head headdd = new Head(Materials.METAL);
-    }
-}
 
 
 
