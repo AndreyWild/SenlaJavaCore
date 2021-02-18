@@ -7,6 +7,11 @@ import eu.senla.task7.robot.Robot;
 
 public class Main {
     public static void main(String[] args) {
+        for (int i = 1; i < 10; i++) {
+            Robot rob = new Robot();
+            System.out.println("№" + i + ") " + rob);
+        }
+
         Head head = new Head();
         head.plasticMat();
         System.out.println(head + "\n");
@@ -23,10 +28,6 @@ public class Main {
         Robot robot2 = new Robot("Би-БИ", head, body);
         System.out.println(robot2 + "\n");
 
-        for (int i = 1; i < 10; i++) {
-            Robot rob = new Robot();
-            System.out.println("№" + i + ") " + rob);
-        }
 
     }
 }

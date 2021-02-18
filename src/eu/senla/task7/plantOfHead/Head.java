@@ -6,7 +6,7 @@ public class Head extends AbstractPartBody {
 
     @Override
     public String toString() {
-        return "[Голова из: " + super.toString() + ']';
+        return "[Голова - " + super.toString() + ']';
     }
 
 }

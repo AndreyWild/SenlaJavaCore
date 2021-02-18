@@ -6,6 +6,6 @@ public class Body extends AbstractPartBody{
 
     @Override
     public String toString() {
-        return "[Туловище из: " + super.toString() + ']';
+        return "[Туловище - " + super.toString() + ']';
     }
 }
