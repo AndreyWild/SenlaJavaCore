@@ -137,3 +137,5 @@ public class MyArrayList<DataType> implements MyList<DataType> {
         return Arrays.toString(array);
     }
 }
+
+//https://javarush.ru/groups/posts/2472-podrobnihy-razbor-klassa-arraylist
