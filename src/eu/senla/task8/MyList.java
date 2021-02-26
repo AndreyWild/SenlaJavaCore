@@ -52,7 +52,4 @@ public interface MyList<DataType> {
     /** Возвращает размер массива */
     int size();
 
-    /** Возвращает абствактный массив */
-    public Object[] toArray();
-
 }
