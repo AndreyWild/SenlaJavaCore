@@ -10,7 +10,7 @@ public interface MyList<DataType> {
     void add(int index, DataType object);
 
     /** Додавляет объект object в конец списка */
-    void add(DataType object);
+    boolean add(DataType object);
 
     /** Добавляет в список по индексу index все
      элементы коллекции collection. Если в результате добавления список был изменен, то
@@ -51,5 +51,13 @@ public interface MyList<DataType> {
 //
     /** Возвращает размер массива */
     int size();
+
+    /** Возвращает абствактный массив */
+    public Object[] toArray();
+
+    public int getLenght();
+
+    public boolean isEmpty();
+
 
 }
