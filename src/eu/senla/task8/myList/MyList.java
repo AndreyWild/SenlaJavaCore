@@ -1,6 +1,5 @@
-package eu.senla.task8;
+package eu.senla.task8.myList;
 
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.ListIterator;
 
@@ -15,7 +14,7 @@ public interface MyList<DataType> {
     /** Добавляет в список по индексу index все
      элементы коллекции collection. Если в результате добавления список был изменен, то
      возвращается true, иначе возвращается false */
-    boolean addAll(int index, Collection<? extends DataType> collection);
+    boolean addAll(int index, MyList<? extends DataType> collection);
 
     /** Возвращает объект из списка по индексу index  */
     DataType get(int index);
@@ -32,7 +31,7 @@ public interface MyList<DataType> {
     ListIterator<DataType> listIterator();
 
     /** Создает из набора элементов объект MyList  */
-    <DataType> MyList <DataType> of(Object ... object);
+    <DataType> MyList<DataType> of(DataType... object);
 
     /** Удаляет объект из списка по индексу index, возвращая при этом
      удаленный объект */
@@ -43,7 +42,7 @@ public interface MyList<DataType> {
     DataType set(int index, DataType object);
 
     /** Сортирует список с помощью компаратора comparator */
-    void sort(Comparator<? extends DataType> comparator);
+    void sort(Comparator<? super DataType> comparator);
 
     /** Возвращает новый MyList <DataType>  из указанного диапазона элементов, с start до end,
      * end не включительно */
@@ -51,5 +50,26 @@ public interface MyList<DataType> {
 //
     /** Возвращает размер массива */
     int size();
+
+    /** Возвращает абствактный массив */
+    Object[] toArray();
+
+    /** Возвращает длину массива */
+    int getLenght();
+
+    /** Проверяет не пустой ли массив */
+    boolean isEmpty();
+
+    /** Очищает массив */
+    void clear();
+
+    /** Возвращает первый элемент массива */
+    DataType getFirst();
+
+    /** Возвращает полседний элемент массива */
+    DataType getLast();
+
+
+
 
 }
