@@ -1,13 +1,12 @@
 package eu.senla.task8.myList;
 
-import eu.senla.task8.comparators.IntegerComparator;
+import eu.senla.task8.comparators.StrComparator;
 
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
-import java.util.List;
 
-public class MyArrayList<DataType> extends IntegerComparator implements MyList<DataType> {
+public class MyArrayList<DataType> extends StrComparator implements MyList<DataType> {
 
     private static int DEFAULT_SIZE = 10; // размер ArrayList по-умолчанию 10
     private static Object[] EMPTY_ARRAY = new Object[]{}; // пустой массив
@@ -21,7 +20,7 @@ public class MyArrayList<DataType> extends IntegerComparator implements MyList<D
     /** Конструктор создает массив с указанным в параметре размером */
     public MyArrayList (int capacity){
         // если объем больше 0. то создаем массив размером capacity
-        if (capacity >= 0){array = new Object[capacity];}
+        if (capacity > 0){array = new Object[capacity];}
         // если capacity = 0, то инициализируем пустой массив
         else if (capacity == 0){array = EMPTY_ARRAY;}
         else {
@@ -239,9 +238,9 @@ public class MyArrayList<DataType> extends IntegerComparator implements MyList<D
 
     @Override  /** ДОДЕЛАТЬ!!! */
     public void sort(Comparator<? super DataType> comparator) {
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i < size - 1; i++) {
             // внутренний цикл прохода
-            for (int j = array.length - 1; j > i; j--) {
+            for (int j = size - 1; j > i; j--) {
                 if (comparator.compare(get(j - 1), get(j)) < 0) {
                     DataType tmp = (DataType) array[j - 1];
                     array[j - 1] = array[j];
@@ -364,4 +363,3 @@ public class MyArrayList<DataType> extends IntegerComparator implements MyList<D
 
 }
 
-//https://javarush.ru/groups/posts/2472-podrobnihy-razbor-klassa-arraylist

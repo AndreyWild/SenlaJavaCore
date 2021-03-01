@@ -2,7 +2,7 @@ package eu.senla.task8.comparators;
 
 import java.util.Comparator;
 
-public class StringComparator implements Comparator<Integer> {
+public class IntComparator implements Comparator<Integer> {
 
     @Override
     public int compare(Integer int1, Integer int2) {
