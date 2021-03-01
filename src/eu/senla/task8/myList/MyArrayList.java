@@ -1,12 +1,12 @@
 package eu.senla.task8.myList;
 
-import eu.senla.task8.comparators.StrComparator;
+//import eu.senla.task8.comparators.StrComparator;
 
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
-public class MyArrayList<DataType> extends StrComparator implements MyList<DataType> {
+public class MyArrayList<DataType> implements MyList<DataType> {
 
     private static int DEFAULT_SIZE = 10; // размер ArrayList по-умолчанию 10
     private static Object[] EMPTY_ARRAY = new Object[]{}; // пустой массив
