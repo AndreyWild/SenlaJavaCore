@@ -236,7 +236,7 @@ public class MyArrayList<DataType> extends StrComparator implements MyList<DataT
         return oldObj;
     }
 
-    @Override  /** ДОДЕЛАТЬ!!! */
+    @Override
     public void sort(Comparator<? super DataType> comparator) {
         for (int i = 0; i < size - 1; i++) {
             // внутренний цикл прохода
