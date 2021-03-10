@@ -55,7 +55,7 @@ public class RobotTest {
             robot = new Robot();
             Body body = new Body(material[i]);
             this.robot.add(body);
-            assertEquals(material[i], this.robot.head.getMaterial());
+            assertEquals(material[i], this.robot.body.getMaterial());
         }
     }
 
