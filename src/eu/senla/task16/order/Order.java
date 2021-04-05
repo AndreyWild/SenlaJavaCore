@@ -11,21 +11,21 @@ import java.util.List;
 public class Order {
 
     private int id;
-    private LocalDateTime dateOfOrder;
-    List<Product> productList = new ArrayList<>();
+    private LocalDate dateOfOrder;
+    private List<Product> productList = new ArrayList<>();
     private static int counter = 0;
 
-    public Order() {
+    public Order(LocalDate ld) {
         counter++;
         id = counter;
-        dateOfOrder = LocalDateTime.now();
+        this.dateOfOrder = ld;
     }
 
     public int getId() {
         return id;
     }
 
-    public LocalDateTime getDateOfOrder() {
+    public LocalDate getDateOfOrder() {
         return dateOfOrder;
     }
 
@@ -37,13 +37,15 @@ public class Order {
         productList.add(product);
     }
 
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
+
     @Override
     public String toString() {
-        return "Order{" +
+        return "Order:" +
                 "id=" + id +
-                ", dateOfOrder=" + dateOfOrder.format(DateTimeFormatter.ofPattern("dd.MMM.Y hh:mm")) +
-                ", productList= \n" + productList.toString()
-                +
-                '}';
+                ", Date of Order:" + dateOfOrder +
+                ", productList: \n" + productList.toString();
     }
 }
