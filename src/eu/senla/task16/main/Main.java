@@ -3,8 +3,6 @@ package eu.senla.task16.main;
 
 import eu.senla.task16.order.Order;
 import eu.senla.task16.product.Product;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,75 +13,60 @@ public class Main {
 
         List<Product> productList = new ArrayList<>();
         List<Order> orderList = new ArrayList<>();
-        Scanner scanner;
-        File fileP = new File("src/eu/senla/task16/files/products");
-        File fileO = new File("src/eu/senla/task16/files/orders");
-        String num;
-
-        try{
-            /* Создает список продуктов на основе файла products */
-            productList = getListProductsFromFile(fileP);
-
-//            scanner = new Scanner(fileP);
-//            while (scanner.hasNextLine()){
-//                num = scanner.nextLine();
-//                String[] str = num.split("/");
-//                Product product = new Product(str[0], getDate(str[1]));
-//                productList.add(product);
-//            }
-
-            /* Создает список товаров на основе файла orders */
-           orderList = getListOrdersFromFile(productList, fileO);
-
-//            scanner = new Scanner(fileO);
-//            while (scanner.hasNextLine()){
-//                num = scanner.nextLine();
-//                String[] str = num.split("/");
-//                Order order = new Order(getDate(str[0]));
-//                for (int i = 1; i <str.length ; i++) {
-//                    for (Product prod : productList){
-//                        if(prod.getId() == Integer.parseInt(str[i])){
-//                            order.addProduct(prod);
-//                        }
-//                    }
-//                }
-//                orderList.add(order);
-//            }
-
-        } catch (Exception ex){ ex.printStackTrace(); }
+        Scanner scannerMain = null;
 
         try {
+
+            /* Создает список продуктов на основе файла products */
+             getListProductsFromFile(productList);
+
+            /* Создает список товаров на основе файла orders */
+             getListOrdersFromFile( productList, orderList);
+
             while (true){
-                scanner = new Scanner(System.in);
-                System.out.println("С чем Вы хотете работать? 1 - товар, 2 - заказ, 3 - выход: ");
-                String num3 = scanner.next();
+                scannerMain = new Scanner(System.in);
+                System.out.println("С чем Вы хотете работать? 1 - товар, 2 - заказ, 0 - выход: ");
+                String mainMenu = scannerMain.next();
 
                 /* Выход */
-                if("3".equals(num3)){break;}
+                if("0".equals(mainMenu)){break;}
 
                 /* Работа с товарами */
-                if("1".equals(num3)){
+                else if("1".equals(mainMenu)){
                     while (true){
                         System.out.println("Что делать с товарами?");
-                        System.out.println("1 - посмотреть все товары, 2 - выход");
-                        String num4 = scanner.next();
-                        if("2".equals(num4)){break;}
-                        if("1".equals(num4)){showList(productList);}
+                        System.out.println("1 - посмотреть все товары, 2 - добавить товар, 3 - удалть товар, 0 - выход: ");
+                        String productsMenu = scannerMain.next();
+                        if("0".equals(productsMenu)){break;}
+                        else if("1".equals(productsMenu)){showList(productList);}
+                        else if("2".equals(productsMenu)){
+                            createProduct(productList);
+                            getFileFromProductsList(productList);
+                        }
+                        else if("3".equals(productsMenu)){
+                            deleteProduct(productList);
+                            getFileFromProductsList(productList);
+                        }
+                        else { errorMessage();}
                     }
                 }
 
                 /* Работа с заказами */
-                if("2".equals(num3)){
+                else if("2".equals(mainMenu)){
                     while (true){
                         System.out.println("Что делать с заказами?");
-                        System.out.println("1 - посмотреть все заказы, 2 - выход");
-                        String num5 = scanner.next();
-                        if("2".equals(num5)){break;}
-                        if("1".equals(num5)){showList(orderList);}
+                        System.out.println("1 - посмотреть все заказы, 3 - удалить заказ, 0 - выход: ");
+                        String ordersMenu = scannerMain.next();
+                        if("0".equals(ordersMenu)){break;}
+                        else if("1".equals(ordersMenu)){showList(orderList);}
+                        else if("3".equals(ordersMenu)){deleteOrder(orderList); getFileFromOrdersList(orderList);}
+                        else { errorMessage();}
                     }
                 }
+                else {errorMessage();}
             }
         } catch (Exception ex){ex.printStackTrace();}
+        finally { scannerMain.close(); }
 
 
 
