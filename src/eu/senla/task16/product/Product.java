@@ -9,8 +9,7 @@ public class Product {
     private LocalDate date;
     private static int counter = 0;
 
-    public Product() {
-    }
+    public Product() { }
 
     public Product(String name, LocalDate date) {
         counter++;
