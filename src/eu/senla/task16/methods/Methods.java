@@ -4,8 +4,10 @@ import eu.senla.task16.order.Order;
 import eu.senla.task16.product.Product;
 
 import java.io.*;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -65,6 +67,7 @@ public class Methods {
         } catch (IOException e) { e.printStackTrace(); } }
 
     public static void createProduct(List<Product> productList) {
+        try{
         Scanner scanner3 = new Scanner(System.in);
         System.out.print("Введите название товара: ");
         String name = scanner3.next();
@@ -74,11 +77,18 @@ public class Methods {
         int month = scanner3.nextInt();
         System.out.print("Введите число производста в формате dd: ");
         int day = scanner3.nextInt();
+
         LocalDate ld = LocalDate.of(year, month, day);
         Product product = new Product(name, ld);
         productList.add(product);
         //scanner3.close(); // java.util.NoSuchElementException
-        System.out.println("Товар " + name + " от " + ld + " создан!");
+        System.out.println("Товар " + name + " от " + ld + " создан!");}
+        catch (InputMismatchException ex){
+            System.err.println("Ты явно что-то делаешь не так, попробуй еще раз.");
+        }
+        catch (DateTimeException e){
+            System.err.println("Ты явно что-то делаешь не так, попробуй еще раз.");
+        }
     }
 
     public static void deleteProduct(List<Product> productList) {
