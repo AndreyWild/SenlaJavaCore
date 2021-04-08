@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static eu.senla.task16.methods.Methods.*;
-import static eu.senla.task16.methods.Methods.errorMessage;
+import static eu.senla.task16.methods.MethodsForProducts.*;
+import static eu.senla.task16.methods.MethodsForOrders.*;
+import static eu.senla.task16.methods.Service.*;
 
 public class Logic {
 
