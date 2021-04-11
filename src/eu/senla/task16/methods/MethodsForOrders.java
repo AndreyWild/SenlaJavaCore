@@ -8,30 +8,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
+import static eu.senla.task16.methods.Service.*;
 
-public class Methods {
+public class MethodsForOrders {
 
-    final static File FILE_PRODUCTS = new File("src/eu/senla/task16/files/products.txt");
     final static File FILE_ORDERS = new File("src/eu/senla/task16/files/orders.txt");
-
-    public static void errorMessage() { System.out.println("Вы точно поняли что надо делать?"); }
-
-    // Преобразует String в LocalDate
-    public static LocalDate getDate(String date) {
-        String[] s = date.split("-");
-        return LocalDate.of(Integer.parseInt(s[2]), Integer.parseInt(s[1]), Integer.parseInt(s[0])); }
-
-    // Выводит любой список в консоль
-    public static <T> void showList(List<T> productList) {
-        for (T p : productList) { System.out.println(p); } }
-
-    //  Преобразует информацию из файла в список Продуктов(товаров)
-    public static void getListProductsFromFile(List<Product> productList) {
-        try (Scanner scanner1 = new Scanner(FILE_PRODUCTS)) {
-            while (scanner1.hasNextLine()) {
-                String[] str = scanner1.nextLine().split("/");
-                productList.add(new Product(str[0], getDate(str[1]))); }
-        } catch (FileNotFoundException e) { e.printStackTrace(); } }
 
     //  Преобразует информацию из файла в список Заказов
     public static void getListOrdersFromFile(List<Product> productList, List<Order> orderList) {
@@ -46,13 +27,6 @@ public class Methods {
                 orderList.add(order); }
         } catch (FileNotFoundException e) { e.printStackTrace(); } }
 
-    // Преобразует List Продуктов(товаров) в файл
-    public static void getFileFromProductsList(List<Product> productList) {
-        try (Writer writer1 = new FileWriter(FILE_PRODUCTS)) {
-            for (Product product : productList) {
-                String strProd = product.getName() + "/" + product.getDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-                writer1.write(strProd + "\n"); }
-        } catch (IOException e) { e.printStackTrace(); } }
 
     // Преобразует List Заказов в файл
     public static void getFileFromOrdersList(List<Order> orderList) {
@@ -64,41 +38,8 @@ public class Methods {
                 writer2.write(strOrd + "\n"); }
         } catch (IOException e) { e.printStackTrace(); } }
 
-    public static void createProduct(List<Product> productList) {
-        Scanner scanner3 = new Scanner(System.in);
-        System.out.print("Введите название товара: ");
-        String name = scanner3.next();
-        System.out.print("Введите год производста в формате yyyy: ");
-        int year = scanner3.nextInt();
-        System.out.print("Введите месяц производста в формате MM: ");
-        int month = scanner3.nextInt();
-        System.out.print("Введите число производста в формате dd: ");
-        int day = scanner3.nextInt();
-        LocalDate ld = LocalDate.of(year, month, day);
-        Product product = new Product(name, ld);
-        productList.add(product);
-        //scanner3.close(); // java.util.NoSuchElementException
-        System.out.println("Товар " + name + " от " + ld + " создан!");
-    }
 
-    public static void deleteProduct(List<Product> productList) {
-        Scanner scanner4 = new Scanner(System.in);
-        System.out.print("Введите id товара который Вы хотите удалить: ");
-        int id = scanner4.nextInt();
-        Product prodTemp = null;
-        for (Product prod : productList) {
-            if (prod.getId() == id) {
-                prodTemp = prod;
-                System.out.println("Товар: " + prod.toString() + " удален!");
-            }
-        }
-        if (prodTemp == null) {
-            System.out.println("Товар с id " + id + " не найден!");
-        }
-        productList.remove(prodTemp);
-        //scanner4.close();
-    }
-
+    // Удаляет заказ по id
     public static void deleteOrder(List<Order> orderList) {
         Scanner scanner5 = new Scanner(System.in);
         System.out.print("Введите id заказа который Вы хотите удалить: ");
@@ -114,6 +55,7 @@ public class Methods {
         //scanner5.close(); // java.util.NoSuchElementException
     }
 
+    // Создает заказ
     public static void createOrder(List<Product> productList, List<Order> orderList) {
         Order order = new Order(LocalDate.now());
         Product product = null;
