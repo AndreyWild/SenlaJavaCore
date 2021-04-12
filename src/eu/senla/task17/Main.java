@@ -5,8 +5,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         DaoUserImpl dao = new DaoUserImpl();
-        User user1 = new User("Andrey", "12345");
-        User user2 = new User("Billy", "54321");
+//        User user1 = new User("Andrey", "12345");
+//        User user2 = new User("Billy", "54321");
 //        User user3 = new User("Bobby", "98765");
 //
 //        System.out.println(dao.create(user1));
@@ -16,10 +16,9 @@ public class Main {
 //
 //        System.out.println(dao.update("Billy", user3));
 //
-//        List<User> users = dao.readAll();
-//        for (User user : users){
-//            System.out.println(user);
-//        }
+        List<User> users = dao.readAll();
+        users.forEach(System.out::println);
+
 
     }
 }
