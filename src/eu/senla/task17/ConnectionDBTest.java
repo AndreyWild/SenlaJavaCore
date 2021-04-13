@@ -2,7 +2,7 @@ package eu.senla.task17;
 
 import java.sql.*;
 
-public class ConnectionDB {
+public class ConnectionDBTest {
     public static void main(String[] args) throws ClassNotFoundException{
         String url = "jdbc:mysql://localhost:3306/app?useSSL=false";
         String username = "root";
@@ -12,13 +12,15 @@ public class ConnectionDB {
         try(Connection connect = DriverManager.getConnection(url, username, password)) {
             System.out.println("Connection to Store DB successful!");
 
-//            PreparedStatement stmt = connect.prepareStatement(
-//                    "CREATE TABLE users (\n" +
-//                            "  id int(10) NOT NULL AUTO_INCREMENT,\n" +
-//                            "  login varchar(20) NOT NULL,\n" +
-//                            "  password varchar(24) NOT NULL,\n" +
-//                            "  PRIMARY KEY (id)\n" +
-//                            ");");
+            /* Создает нужную таблицу в базе данных
+            PreparedStatement stmt = connect.prepareStatement(
+                    "CREATE TABLE users (\n" +
+                            "  id int(10) NOT NULL AUTO_INCREMENT,\n" +
+                            "  login varchar(20) UNIQUE NOT NULL,\n" +
+                            "  password varchar(24) NOT NULL,\n" +
+                            "  PRIMARY KEY (id)\n" +
+                            ");");
+             */
 
             // Обновить значения лог/пасс по id
 //            PreparedStatement stmt = connect.prepareStatement("UPDATE users SET login=?, password=? WHERE id=?");
@@ -27,13 +29,13 @@ public class ConnectionDB {
             // Создай новую строку с значениями из переменных
 //            PreparedStatement stmt = connect.prepareStatement("INSERT INTO users (login, password) VALUES (?, ?)");
             // Удали стороку с указанными дог/пасс
-            PreparedStatement stmt = connect.prepareStatement("DELETE FROM users WHERE login=? AND password=?");
-
-            stmt.setString(1, "Vlad");
-            stmt.setString(2, "000000");
+//            PreparedStatement stmt = connect.prepareStatement("DELETE FROM users WHERE login=? AND password=?");
+//
+//            stmt.setString(1, "Vlad");
+//            stmt.setString(2, "000000");
 //            stmt.setInt(3,2);
 
-            stmt.execute();
+//            stmt.execute();
 
 //            ResultSet rs = stmt.executeQuery();
 //            String name;

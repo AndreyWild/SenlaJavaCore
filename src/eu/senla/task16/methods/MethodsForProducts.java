@@ -10,6 +10,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import static eu.senla.task16.methods.Service.*;
+import org.apache.commons.io.input.CloseShieldInputStream;
 
 
 public class MethodsForProducts {
@@ -36,8 +37,8 @@ public class MethodsForProducts {
 
     // Создает Товар и добавляет его
     public static void createProduct(List<Product> productList) {
-        try{
-            Scanner scanner3 = new Scanner(System.in);
+        try(Scanner scanner3 = new Scanner(new CloseShieldInputStream(System.in))){
+            //Scanner scanner3 = new Scanner(System.in);
             System.out.print("Введите название товара: ");
             String name = scanner3.next();
             System.out.print("Введите год производста в формате yyyy: ");
@@ -62,21 +63,25 @@ public class MethodsForProducts {
 
     // Удаляет Товар по id
     public static void deleteProduct(List<Product> productList) {
-        Scanner scanner4 = new Scanner(System.in);
-        System.out.print("Введите id товара который Вы хотите удалить: ");
-        int id = scanner4.nextInt();
-        Product prodTemp = null;
-        for (Product prod : productList) {
-            if (prod.getId() == id) {
-                prodTemp = prod;
-                System.out.println("Товар: " + prod.toString() + " удален!");
+        try(Scanner scanner4 = new Scanner(new CloseShieldInputStream(System.in))) {
+            //Scanner scanner4 = new Scanner(System.in);
+            System.out.print("Введите id товара который Вы хотите удалить: ");
+            int id = scanner4.nextInt();
+            Product prodTemp = null;
+            for (Product prod : productList) {
+                if (prod.getId() == id) {
+                    prodTemp = prod;
+                    System.out.println("Товар: " + prod.toString() + " удален!");
+                }
             }
+            if (prodTemp == null) {
+                System.out.println("Товар с id " + id + " не найден!");
+            }
+            productList.remove(prodTemp);
+            //scanner4.close();
+        }catch (Exception ex){
+            ex.printStackTrace();
         }
-        if (prodTemp == null) {
-            System.out.println("Товар с id " + id + " не найден!");
-        }
-        productList.remove(prodTemp);
-        //scanner4.close();
     }
 
 
