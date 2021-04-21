@@ -1,4 +1,4 @@
-package eu.senla.task17;
+package eu.senla.task17.configuration;
 
 import java.sql.*;
 

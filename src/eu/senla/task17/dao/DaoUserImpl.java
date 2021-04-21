@@ -1,4 +1,7 @@
-package eu.senla.task17;
+package eu.senla.task17.dao;
+
+import eu.senla.task17.configuration.ConnectionToDB;
+import eu.senla.task17.entity.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,7 +29,7 @@ public class DaoUserImpl implements Dao{
     }
 
     @Override
-    public User read(String name, String password) {
+    public User read(String name) {
         User user = null;
         try (PreparedStatement stmt = connect.prepareStatement("SELECT * FROM users")) {
             ResultSet rs = stmt.executeQuery();
@@ -37,7 +40,7 @@ public class DaoUserImpl implements Dao{
                 id = rs.getString("id");
                 login = rs.getString("login");
                 pass = rs.getString("password");
-                if(name.equals(login) && password.equals(pass)){
+                if(name.equals(login)){
                     user = new User(Integer.parseInt(id), login, pass);
                 }
             }

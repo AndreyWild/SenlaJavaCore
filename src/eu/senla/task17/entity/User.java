@@ -1,4 +1,4 @@
-package eu.senla.task17;
+package eu.senla.task17.entity;
 
 import java.util.Objects;
 
